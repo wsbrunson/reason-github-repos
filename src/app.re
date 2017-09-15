@@ -19,7 +19,7 @@ let dummyRepos: array RepoData.repo = [|
 
 let make _ => {
   ...component,
-  initialState: fun () => ({repos: Some dummyRepos}: state),
+  initialState: fun () => ({repos: None}: state),
   reducer: fun action _ =>
     switch action {
     | FetchRepos repos => ReasonReact.Update {repos: Some repos}
